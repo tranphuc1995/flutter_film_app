@@ -25,7 +25,7 @@ class NetworkRequest {
                 releaseDate: filmResponse['release_date'] ?? '',
                 voteAverage: filmResponse['vote_average'].toString() ?? '',
                 voteCount: filmResponse['vote_count'].toString() ?? ''))
-            .toList();
+            .toList().where((film) => !film.posterPath.endsWith('w500')).toList();
         return Tuple2(true, films);
       } else if (response.statusCode == 400) {
         return Tuple2(false, <Film>[]);
