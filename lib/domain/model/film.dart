@@ -1,6 +1,6 @@
-class PopularFilmResponse {
-  List<Film> films;
-}
+import 'package:json_annotation/json_annotation.dart';
+
+
 
 class Film {
   int id;
@@ -11,7 +11,7 @@ class Film {
   String voteAverage;
   String voteCount;
 
-
-
   Film({this.id = 0, this.title = '', this.overview = '', this.posterPath = '', this.releaseDate= '', this.voteAverage = '',this.voteCount=''});
 }
+
+

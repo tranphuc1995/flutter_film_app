@@ -1,4 +1,4 @@
-import 'package:film_app/model/popular_film_response.dart';
+import 'package:film_app/domain/model/film.dart';
 
 abstract class PopularFilmState {}
 
