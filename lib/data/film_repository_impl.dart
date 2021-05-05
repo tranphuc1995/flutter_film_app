@@ -16,24 +16,20 @@ class FilmRepositoryImpl implements FilmRepository {
   @override
   Future<Tuple2<bool, List<Film>>> getPopularFilmFromRemote(
       {int page, http.Client client}) async {
-    try {
-      final response = await client
-          .get(Uri.parse('$DOMAIN/popular?api_key=$API_KEY&page=$page'));
-      if (response.statusCode == 200) {
-        List<dynamic> filmResponses = json.decode(response.body)['results'];
-        List<FilmEntity> filmEntities = filmResponses
-            .map((filmResponse) => FilmEntity.fromJson(filmResponse))
-            .toList();
-        List<Film> films = filmEntities
-            .map((filmEntity) => filmMapper.mapToDomain(filmEntity: filmEntity))
-            .toList();
-        return Tuple2(true, films);
-      } else if (response.statusCode == 400) {
-        return Tuple2(false, <Film>[]);
-      } else {
-        return Tuple2(false, <Film>[]);
-      }
-    } catch (exception) {
+    final response = await client
+        .get(Uri.parse('$DOMAIN/popular?api_key=$API_KEY&page=$page'));
+    if (response.statusCode == 200) {
+      List<dynamic> filmResponses = json.decode(response.body)['results'];
+      List<FilmEntity> filmEntities = filmResponses
+          .map((filmResponse) => FilmEntity.fromJson(filmResponse))
+          .toList();
+      List<Film> films = filmEntities
+          .map((filmEntity) => filmMapper.mapToDomain(filmEntity: filmEntity))
+          .toList();
+      return Tuple2(true, films);
+    } else if (response.statusCode == 400) {
+      return Tuple2(false, <Film>[]);
+    } else {
       return Tuple2(false, <Film>[]);
     }
   }

@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:film_app/domain/model/film.dart';
 import 'package:film_app/ui/detail_film_page/detail_film_page.dart';
-import 'package:film_app/utils/AppUtils.dart';
+import 'package:film_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 
 

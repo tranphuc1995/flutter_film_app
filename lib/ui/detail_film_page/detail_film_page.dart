@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:film_app/domain/model/film.dart';
 import 'package:film_app/my_icon/my_flutter_app_icons.dart';
-import 'package:film_app/utils/AppUtils.dart';
+import 'package:film_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 
 class DetailFilmPage extends StatelessWidget {

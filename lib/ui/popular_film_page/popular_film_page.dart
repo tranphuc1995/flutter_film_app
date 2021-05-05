@@ -3,7 +3,7 @@ import 'package:film_app/ui/popular_film_page/popular_film_event.dart';
 import 'package:film_app/ui/popular_film_page/popular_film_state.dart';
 import 'package:film_app/ui/popular_film_page/popular_item.dart';
 import 'package:film_app/ui/popular_film_page/popular_loading_item.dart';
-import 'package:film_app/utils/AppUtils.dart';
+import 'package:film_app/utils/app_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
